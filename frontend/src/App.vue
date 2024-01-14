@@ -1,22 +1,20 @@
 <template>
-  <div>
-    <h1>Categories</h1>
-    <ul>
-      <li v-for="category in categories" :key="category.id">
-        {{category.name}}
-      </li>
-    </ul>
-  </div>
+    <router-view v-slot="{ Component }">
+      <component :is="Component" />
+    </router-view>
 </template>
 
 <script>
-
+import RecipeForm from './pages/RecipeForm.vue'
 
 export default {
   data(){
     return {
       categories : []
     }
+  },
+  components: {
+    RecipeForm
   },
   methods : {
     async getCategories() {
