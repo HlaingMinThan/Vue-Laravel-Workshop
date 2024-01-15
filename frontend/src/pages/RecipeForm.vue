@@ -100,14 +100,12 @@ export default {
                 'content-type' : 'application/json'
               }
             })
-            if(res) console.log(res)
           } else {
            let res = await this.$axios.post("/recipes", this.data , {
               headers: {
                 'content-type' : 'application/json'
               }
           })
-          if(res) console.log(res)
           }
         }
       }catch(e) {console.log(e)}
